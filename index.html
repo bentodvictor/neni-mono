@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neni Mono Font Specimen & Playground 🐾</title>
+    <style>
+      /* ==========================================================================
+         1. FONT FACE DEFINITIONS
+         ========================================================================== */
+      /* Standard Neni Mono */
+      @font-face {
+        font-family: "Neni Mono";
+        src: url("./fonts/ttf/NeniMono-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Neni Mono";
+        src: url("./fonts/ttf/NeniMono-Italic.ttf") format("truetype");
+        font-weight: 400;
+        font-style: italic;
+      }
+      @font-face {
+        font-family: "Neni Mono";
+        src: url("./fonts/ttf/NeniMono-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Neni Mono";
+        src: url("./fonts/ttf/NeniMono-BoldItalic.ttf") format("truetype");
+        font-weight: 700;
+        font-style: italic;
+      }
+
+      /* Neni Mono NF (Nerd Fonts Edition) */
+      @font-face {
+        font-family: "Neni Mono NF";
+        src: url("./fonts/nf/NeniMonoNF-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Neni Mono NF";
+        src: url("./fonts/nf/NeniMonoNF-Italic.ttf") format("truetype");
+        font-weight: 400;
+        font-style: italic;
+      }
+      @font-face {
+        font-family: "Neni Mono NF";
+        src: url("./fonts/nf/NeniMonoNF-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Neni Mono NF";
+        src: url("./fonts/nf/NeniMonoNF-BoldItalic.ttf") format("truetype");
+        font-weight: 700;
+        font-style: italic;
+      }
+
+      /* ==========================================================================
+         2. DESIGN SYSTEM & CSS VARIABLES
+         ========================================================================== */
+      :root {
+        --bg-dark: #0f111a;
+        --card-bg: #161925;
+        --card-border: #23283b;
+        --accent: #646cff;
+        --accent-hover: #7c83ff;
+        --cyan: #39adb5;
+        --gold: #f1a208;
+        --green: #41b883;
+        --pink: #ff5370;
+        --text-primary: #e6e8ee;
+        --text-secondary: #8b92a5;
+        --font-active: "Neni Mono", monospace;
+      }
+
+      [data-theme="cyberpunk"] {
+        --bg-dark: #0d0221;
+        --card-bg: #190a38;
+        --card-border: #2d1260;
+        --accent: #ff007f;
+        --accent-hover: #ff3399;
+        --cyan: #00f0ff;
+        --gold: #ffe600;
+        --text-primary: #f0f0ff;
+        --text-secondary: #a088d0;
+      }
+
+      [data-theme="dracula"] {
+        --bg-dark: #282a36;
+        --card-bg: #343746;
+        --card-border: #44475a;
+        --accent: #bd93f9;
+        --accent-hover: #d6b4ff;
+        --cyan: #8be9fd;
+        --gold: #f1fa8c;
+        --text-primary: #f8f8f2;
+        --text-secondary: #6272a4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background-color: var(--bg-dark);
+        color: var(--text-primary);
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Header & Hero */
+      header {
+        background: linear-gradient(180deg, rgba(22, 25, 37, 0.9) 0%, rgba(15, 17, 26, 0) 100%);
+        padding: 40px 20px 20px;
+        text-align: center;
+        border-bottom: 1px solid var(--card-border);
+      }
+
+      .hero-content {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .mascot-avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--accent);
+        box-shadow: 0 0 20px rgba(100, 108, 255, 0.4);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        background: linear-gradient(135deg, var(--text-primary) 0%, var(--cyan) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .subtitle {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0;
+      }
+
+      .badge-group {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 5px;
+      }
+
+      .badge {
+        background: rgba(100, 108, 255, 0.15);
+        color: var(--accent);
+        border: 1px solid rgba(100, 108, 255, 0.3);
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      /* Main Layout */
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px 20px 60px;
+      }
+
+      /* Toolbar Controls */
+      .toolbar {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        padding: 16px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .control-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .control-label {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .btn-toggle-group {
+        display: flex;
+        background-color: var(--bg-dark);
+        padding: 4px;
+        border-radius: 8px;
+        border: 1px solid var(--card-border);
+      }
+
+      .btn-toggle {
+        background: transparent;
+        border: none;
+        color: var(--text-secondary);
+        padding: 6px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+
+      .btn-toggle.active {
+        background-color: var(--accent);
+        color: #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      select, input[type="range"] {
+        background-color: var(--bg-dark);
+        color: var(--text-primary);
+        border: 1px solid var(--card-border);
+        padding: 6px 12px;
+        border-radius: 6px;
+        outline: none;
+        cursor: pointer;
+      }
+
+      /* Specimen Card */
+      .card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--card-border);
+      }
+
+      .card-title {
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--gold);
+        margin: 0;
+      }
+
+      /* Playground Textarea */
+      .playground-editor {
+        font-family: var(--font-active);
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--cyan);
+        background-color: var(--bg-dark);
+        border: 1px solid var(--card-border);
+        border-radius: 8px;
+        width: 100%;
+        height: 220px;
+        padding: 16px;
+        resize: vertical;
+        outline: none;
+        transition: border-color 0.2s ease;
+      }
+
+      .playground-editor:focus {
+        border-color: var(--accent);
+      }
+
+      /* Font Rendering Grid */
+      .grid-specimen {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .style-row {
+        background-color: var(--bg-dark);
+        border: 1px solid var(--card-border);
+        border-radius: 8px;
+        padding: 16px;
+        font-family: var(--font-active);
+      }
+
+      .style-meta {
+        font-size: 0.8rem;
+        color: var(--pink);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      .style-render {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        word-break: break-all;
+      }
+
+      .bold { font-weight: 700; }
+      .italic { font-style: italic; }
+
+      /* Glyph Highlight Grid */
+      .glyph-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+      }
+
+      .glyph-box {
+        background-color: var(--bg-dark);
+        border: 1px solid var(--card-border);
+        border-radius: 8px;
+        padding: 12px;
+        text-align: center;
+      }
+
+      .glyph-char {
+        font-family: var(--font-active);
+        font-size: 1.8rem;
+        color: var(--gold);
+        margin-bottom: 4px;
+      }
+
+      .glyph-name {
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+      }
+
+      /* Nerd Font Icon Showcase */
+      .nf-showcase {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 12px;
+        font-family: "Neni Mono NF", "Neni Mono", monospace;
+      }
+
+      .nf-item {
+        background: var(--bg-dark);
+        border: 1px solid var(--card-border);
+        padding: 10px 14px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1rem;
+      }
+
+      .nf-icon {
+        font-size: 1.3rem;
+        color: var(--cyan);
+      }
+
+      .nf-desc {
+        font-size: 0.85rem;
+        color: var(--text-primary);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 40px 20px;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        border-top: 1px solid var(--card-border);
+      }
+
+      footer a {
+        color: var(--cyan);
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="hero-content">
+        <img src="./assets/Neni.jpg" alt="Neni Mascot" class="mascot-avatar" />
+        <h1>Neni Mono Specimen 🐾</h1>
+        <p class="subtitle">
+          A custom developer typeface tailored after Hack & alt-hack with optional Nerd Fonts icon patches.
+        </p>
+        <div class="badge-group">
+          <span class="badge">SIL OFL 1.1</span>
+          <span class="badge">Monospaced</span>
+          <span class="badge">Hack Upstream</span>
+          <span class="badge">Nerd Fonts Patched</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- CONTROL TOOLBAR -->
+      <div class="toolbar">
+        <div class="control-group">
+          <span class="control-label">Font Family:</span>
+          <div class="btn-toggle-group">
+            <button class="btn-toggle active" id="btn-standard" onclick="setFontFamily('Neni Mono', this)">Standard</button>
+            <button class="btn-toggle" id="btn-nf" onclick="setFontFamily('Neni Mono NF', this)">Nerd Font (NF)</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <span class="control-label">Size:</span>
+          <input type="range" id="size-slider" min="12" max="32" value="16" oninput="updateFontSize(this.value)" />
+          <span id="size-val" style="font-size: 0.9rem; min-width: 35px;">16px</span>
+        </div>
+
+        <div class="control-group">
+          <span class="control-label">Theme:</span>
+          <select onchange="setTheme(this.value)">
+            <option value="default">Midnight</option>
+            <option value="cyberpunk">Cyberpunk</option>
+            <option value="dracula">Dracula</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE PLAYGROUND -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">⚡ Interactive Playground</h2>
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Live Type & Test</span>
+        </div>
+        <textarea class="playground-editor" id="editor" spellcheck="false">
+// Neni Mono Font Feature Demonstration 🐾
+export class NeniMonoDemo {
+    public static readonly VERSION = "1.0.0";
+    
+    public inspectGlyphs(): string {
+        const ambiguityCheck = "01lI&g | () {} [] <> -> => == !==";
+        const numbers = "0 1 2 3 4 5 6 7 8 9";
+        
+        if (ambiguityCheck.length > 0) {
+            return `🐾 Clean readable code! ${numbers}`;
+        }
+        return "The quick brown fox jumps over the lazy dog.";
+    }
+}</textarea>
+      </div>
+
+      <!-- GLYPH HIGHLIGHTS -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">🔍 Custom Glyph Substitutions</h2>
+        </div>
+        <div class="glyph-grid">
+          <div class="glyph-box">
+            <div class="glyph-char">0</div>
+            <div class="glyph-name">Forwardslash Zero</div>
+          </div>
+          <div class="glyph-box">
+            <div class="glyph-char">1</div>
+            <div class="glyph-name">Noslab One</div>
+          </div>
+          <div class="glyph-box">
+            <div class="glyph-char">3</div>
+            <div class="glyph-name">Flattop Three</div>
+          </div>
+          <div class="glyph-box">
+            <div class="glyph-char">i</div>
+            <div class="glyph-name">Straight Stem i</div>
+          </div>
+          <div class="glyph-box">
+            <div class="glyph-char">()</div>
+            <div class="glyph-name">Round Parentheses</div>
+          </div>
+          <div class="glyph-box">
+            <div class="glyph-char">&lt;&gt;</div>
+            <div class="glyph-name">Wider Brackets</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TYPEFACE WEIGHTS SPECIMEN -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">✒️ Font Family Styles</h2>
+        </div>
+        <div class="grid-specimen">
+          <!-- Regular -->
+          <div class="style-row">
+            <div class="style-meta">Regular (400)</div>
+            <div class="style-render">
+              ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+              abcdefghijklmnopqrstuvwxyz<br />
+              01234567890 [] {} () &lt;&gt; : ; , .<br />
+              l1Ii g& -&gt; =&gt; == !== ?? "" '' ~
+            </div>
+          </div>
+
+          <!-- Italic -->
+          <div class="style-row italic">
+            <div class="style-meta">Italic</div>
+            <div class="style-render">
+              ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+              abcdefghijklmnopqrstuvwxyz<br />
+              01234567890 [] {} () &lt;&gt; : ; , .<br />
+              l1Ii g& -&gt; =&gt; == !== ?? "" '' ~
+            </div>
+          </div>
+
+          <!-- Bold -->
+          <div class="style-row bold">
+            <div class="style-meta">Bold (700)</div>
+            <div class="style-render">
+              ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+              abcdefghijklmnopqrstuvwxyz<br />
+              01234567890 [] {} () &lt;&gt; : ; , .<br />
+              l1Ii g& -&gt; =&gt; == !== ?? "" '' ~
+            </div>
+          </div>
+
+          <!-- Bold Italic -->
+          <div class="style-row bold italic">
+            <div class="style-meta">Bold Italic</div>
+            <div class="style-render">
+              ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+              abcdefghijklmnopqrstuvwxyz<br />
+              01234567890 [] {} () &lt;&gt; : ; , .<br />
+              l1Ii g& -&gt; =&gt; == !== ?? "" '' ~
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NERD FONTS ICON SPECIMEN -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">💎 Nerd Fonts Icon Edition (`NeniMono NF`)</h2>
+        </div>
+        <div class="nf-showcase">
+          <div class="nf-item"><span class="nf-icon"></span><span class="nf-desc">Visual Studio</span></div>
+          <div class="nf-item"><span class="nf-icon"></span><span class="nf-desc">React / JS</span></div>
+          <div class="nf-item"><span class="nf-icon"></span><span class="nf-desc">Node.js</span></div>
+          <div class="nf-item"><span class="nf-icon"></span><span class="nf-desc">Docker</span></div>
+          <div class="nf-item"><span class="nf-icon">󰅩</span><span class="nf-desc">TypeScript</span></div>
+          <div class="nf-item"><span class="nf-icon"></span><span class="nf-desc">Go Lang</span></div>
+          <div class="nf-item"><span class="nf-icon"></span><span class="nf-desc">Rust</span></div>
+          <div class="nf-item"><span class="nf-icon"></span><span class="nf-desc">Git Branch</span></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Neni Mono Font Family is licensed under the
+      <a href="LICENSE.md">SIL Open Font License 1.1</a>.<br />
+      Derived from Hack Typeface, alt-hack, and Bitstream Vera. Internal metadata renamed with <a href="https://github.com/chrissimpkins/fontname.py" target="_blank" rel="noopener">fontname.py</a>.
+    </footer>
+
+    <script>
+      function setFontFamily(fontName, element) {
+        document.documentElement.style.setProperty('--font-active', '"' + fontName + '", monospace');
+        document.querySelectorAll('.btn-toggle').forEach(btn => btn.classList.remove('active'));
+        if (element) element.classList.add('active');
+      }
+
+      function updateFontSize(val) {
+        document.getElementById('size-val').innerText = val + 'px';
+        document.getElementById('editor').style.fontSize = val + 'px';
+      }
+
+      function setTheme(theme) {
+        if (theme === 'default') {
+          document.documentElement.removeAttribute('data-theme');
+        } else {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+      }
+    </script>
+  </body>
+</html>
