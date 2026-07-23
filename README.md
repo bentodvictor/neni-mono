@@ -52,7 +52,7 @@ The original Hack typeface is one of the most solid tools available for develope
 
 ### Desktop (Windows, macOS, Linux)
 
-1. Navigate to the [`fonts/`](./fonts) directory in this repo (or download a package from the [Releases](https://github.com/bentodvictor/neni-mono/releases) tab).
+1. Navigate to the [`fonts/`](./fonts) directory in this repo.
 2. Choose your preferred format:
    - For standard coding: Install files from `fonts/ttf/` or `fonts/ttc/NeniMono.ttc`.
    - For terminal icons / Nerd Fonts: Install files from `fonts/nf/` or `fonts/ttc/NeniMonoNF.ttc`.
