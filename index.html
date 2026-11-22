@@ -3,59 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Neni Mono Font Specimen & Playground 🐾</title>
+    <title>Neni Font Specimen & Playground 🐾</title>
     <style>
       /* ==========================================================================
          1. FONT FACE DEFINITIONS
          ========================================================================== */
-      /* Standard Neni Mono */
+      /* Standard Neni */
       @font-face {
-        font-family: "Neni Mono";
-        src: url("./fonts/ttf/NeniMono-Regular.ttf") format("truetype");
+        font-family: "Neni";
+        src: url("./fonts/ttf/Neni-Regular.ttf") format("truetype");
         font-weight: 400;
         font-style: normal;
       }
       @font-face {
-        font-family: "Neni Mono";
-        src: url("./fonts/ttf/NeniMono-Italic.ttf") format("truetype");
+        font-family: "Neni";
+        src: url("./fonts/ttf/Neni-Italic.ttf") format("truetype");
         font-weight: 400;
         font-style: italic;
       }
       @font-face {
-        font-family: "Neni Mono";
-        src: url("./fonts/ttf/NeniMono-Bold.ttf") format("truetype");
+        font-family: "Neni";
+        src: url("./fonts/ttf/Neni-Bold.ttf") format("truetype");
         font-weight: 700;
         font-style: normal;
       }
       @font-face {
-        font-family: "Neni Mono";
-        src: url("./fonts/ttf/NeniMono-BoldItalic.ttf") format("truetype");
+        font-family: "Neni";
+        src: url("./fonts/ttf/Neni-BoldItalic.ttf") format("truetype");
         font-weight: 700;
         font-style: italic;
       }
 
-      /* Neni Mono NF (Nerd Fonts Edition) */
+      /* Neni NF (Nerd Fonts Edition) */
       @font-face {
-        font-family: "Neni Mono NF";
-        src: url("./fonts/nf/NeniMonoNF-Regular.ttf") format("truetype");
+        font-family: "Neni NF";
+        src: url("./fonts/nf/NeniNF-Regular.ttf") format("truetype");
         font-weight: 400;
         font-style: normal;
       }
       @font-face {
-        font-family: "Neni Mono NF";
-        src: url("./fonts/nf/NeniMonoNF-Italic.ttf") format("truetype");
+        font-family: "Neni NF";
+        src: url("./fonts/nf/NeniNF-Italic.ttf") format("truetype");
         font-weight: 400;
         font-style: italic;
       }
       @font-face {
-        font-family: "Neni Mono NF";
-        src: url("./fonts/nf/NeniMonoNF-Bold.ttf") format("truetype");
+        font-family: "Neni NF";
+        src: url("./fonts/nf/NeniNF-Bold.ttf") format("truetype");
         font-weight: 700;
         font-style: normal;
       }
       @font-face {
-        font-family: "Neni Mono NF";
-        src: url("./fonts/nf/NeniMonoNF-BoldItalic.ttf") format("truetype");
+        font-family: "Neni NF";
+        src: url("./fonts/nf/NeniNF-BoldItalic.ttf") format("truetype");
         font-weight: 700;
         font-style: italic;
       }
@@ -75,7 +75,7 @@
         --pink: #ff5370;
         --text-primary: #e6e8ee;
         --text-secondary: #8b92a5;
-        --font-active: "Neni Mono", monospace;
+        --font-active: "Neni", monospace;
       }
 
       [data-theme="cyberpunk"] {
@@ -153,7 +153,7 @@
       .subtitle {
         color: var(--text-secondary);
         font-size: 1.1rem;
-        max-width: 600px;
+        max-width: 680px;
         margin: 0;
       }
 
@@ -279,13 +279,14 @@
       .playground-editor {
         font-family: var(--font-active);
         font-size: 1rem;
-        line-height: 1.6;
+        line-height: normal;
+        font-variant-ligatures: none;
         color: var(--cyan);
         background-color: var(--bg-dark);
         border: 1px solid var(--card-border);
         border-radius: 8px;
         width: 100%;
-        height: 220px;
+        height: 230px;
         padding: 16px;
         resize: vertical;
         outline: none;
@@ -322,7 +323,7 @@
 
       .style-render {
         font-size: 1.1rem;
-        line-height: 1.6;
+        line-height: normal;
         word-break: break-all;
       }
 
@@ -332,7 +333,7 @@
       /* Glyph Highlight Grid */
       .glyph-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 12px;
       }
 
@@ -346,7 +347,7 @@
 
       .glyph-char {
         font-family: var(--font-active);
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         color: var(--gold);
         margin-bottom: 4px;
       }
@@ -361,7 +362,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         gap: 12px;
-        font-family: "Neni Mono NF", "Neni Mono", monospace;
+        font-family: "Neni NF", "Neni", monospace;
       }
 
       .nf-item {
@@ -408,15 +409,16 @@
     <header>
       <div class="hero-content">
         <img src="./assets/Neni.jpg" alt="Neni Mascot" class="mascot-avatar" />
-        <h1>Neni Mono Specimen 🐾</h1>
+        <h1>Neni Specimen 🐾</h1>
         <p class="subtitle">
-          A custom developer typeface tailored after Hack & alt-hack with optional Nerd Fonts icon patches.
+          An open-source developer typeface engineered for 10h+ coding sessions — combining classic Menlo/Meslo geometry, 1.25× native line height, aligned operators, and zero ligatures.
         </p>
         <div class="badge-group">
-          <span class="badge">SIL OFL 1.1</span>
-          <span class="badge">Monospaced</span>
-          <span class="badge">Hack Upstream</span>
-          <span class="badge">Nerd Fonts Patched</span>
+          <span class="badge">Apache 2.0 &amp; Bitstream Vera</span>
+          <span class="badge">1.25× Native Line Height</span>
+          <span class="badge">Zero Ligatures</span>
+          <span class="badge">Y=642 Operator Axis</span>
+          <span class="badge">Nerd Fonts v3.4.0</span>
         </div>
       </div>
     </header>
@@ -427,8 +429,8 @@
         <div class="control-group">
           <span class="control-label">Font Family:</span>
           <div class="btn-toggle-group">
-            <button class="btn-toggle active" id="btn-standard" onclick="setFontFamily('Neni Mono', this)">Standard</button>
-            <button class="btn-toggle" id="btn-nf" onclick="setFontFamily('Neni Mono NF', this)">Nerd Font (NF)</button>
+            <button class="btn-toggle active" id="btn-standard" onclick="setFontFamily('Neni', this)">Neni (Standard)</button>
+            <button class="btn-toggle" id="btn-nf" onclick="setFontFamily('Neni NF', this)">Neni NF (Nerd Fonts)</button>
           </div>
         </div>
 
@@ -452,54 +454,55 @@
       <div class="card">
         <div class="card-header">
           <h2 class="card-title">⚡ Interactive Playground</h2>
-          <span style="font-size: 0.8rem; color: var(--text-secondary);">Live Type & Test</span>
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Native 1.25× Line Height • Zero Ligatures</span>
         </div>
         <textarea class="playground-editor" id="editor" spellcheck="false">
-// Neni Mono Font Feature Demonstration 🐾
-export class NeniMonoDemo {
-    public static readonly VERSION = "1.0.0";
-    
-    public inspectGlyphs(): string {
-        const ambiguityCheck = "01lI&g | () {} [] <> -> => == !==";
-        const numbers = "0 1 2 3 4 5 6 7 8 9";
-        
-        if (ambiguityCheck.length > 0) {
-            return `🐾 Clean readable code! ${numbers}`;
+// Neni Font Ergonomic Feature Demonstration 🐾
+export class NeniEngine {
+    public static readonly VERSION = "2.0.0";
+
+    public verifyAlignment(input?: string): string {
+        const operators = "+ - = < > ~ * : := :: ?: -> => !== ~=";
+        const delimiters = "({[ 0O1lI | ! : . ]})";
+        const noLigatures = "fi fl ff ffi ffl != === <= >=";
+
+        if (operators.length > 0 && noLigatures.length > 0) {
+            return `🐾 Crisp 10h+ coding ergonomics: ${delimiters}`;
         }
         return "The quick brown fox jumps over the lazy dog.";
     }
 }</textarea>
       </div>
 
-      <!-- GLYPH HIGHLIGHTS -->
+      <!-- ERGONOMIC HIGHLIGHTS -->
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">🔍 Custom Glyph Substitutions</h2>
+          <h2 class="card-title">🔍 Ergonomic Engineering Highlights</h2>
         </div>
         <div class="glyph-grid">
           <div class="glyph-box">
-            <div class="glyph-char">0</div>
-            <div class="glyph-name">Forwardslash Zero</div>
+            <div class="glyph-char">+ - = ~ * :</div>
+            <div class="glyph-name">Y=642 Operator Axis</div>
           </div>
           <div class="glyph-box">
-            <div class="glyph-char">1</div>
-            <div class="glyph-name">Noslab One</div>
+            <div class="glyph-char">({[ ]})</div>
+            <div class="glyph-name">Locked &amp; Mirrored Brackets</div>
           </div>
           <div class="glyph-box">
-            <div class="glyph-char">3</div>
-            <div class="glyph-name">Flattop Three</div>
+            <div class="glyph-char">0 O 1 l I</div>
+            <div class="glyph-name">Zero Ambiguity Forms</div>
           </div>
           <div class="glyph-box">
-            <div class="glyph-char">i</div>
-            <div class="glyph-name">Straight Stem i</div>
+            <div class="glyph-char">fi fl != =&gt;</div>
+            <div class="glyph-name">Strict 1:1 No Ligatures</div>
           </div>
           <div class="glyph-box">
-            <div class="glyph-char">()</div>
-            <div class="glyph-name">Round Parentheses</div>
+            <div class="glyph-char">| ! : .</div>
+            <div class="glyph-name">X=616.5 Cell Centering</div>
           </div>
           <div class="glyph-box">
-            <div class="glyph-char">&lt;&gt;</div>
-            <div class="glyph-name">Wider Brackets</div>
+            <div class="glyph-char">┌─┼─┐ │█│</div>
+            <div class="glyph-name">Full-Bleed Box Drawing</div>
           </div>
         </div>
       </div>
@@ -512,45 +515,45 @@ export class NeniMonoDemo {
         <div class="grid-specimen">
           <!-- Regular -->
           <div class="style-row">
-            <div class="style-meta">Regular (400)</div>
+            <div class="style-meta">Neni Regular (400)</div>
             <div class="style-render">
               ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
               abcdefghijklmnopqrstuvwxyz<br />
-              01234567890 [] {} () &lt;&gt; : ; , .<br />
-              l1Ii g& -&gt; =&gt; == !== ?? "" '' ~
+              0123456789 [] {} () &lt;&gt; + - = ~ * : ; , .<br />
+              l1Ii 0O g&amp; -&gt; =&gt; := :: ?: == !== fi fl
             </div>
           </div>
 
           <!-- Italic -->
           <div class="style-row italic">
-            <div class="style-meta">Italic</div>
+            <div class="style-meta">Neni Italic (400)</div>
             <div class="style-render">
               ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
               abcdefghijklmnopqrstuvwxyz<br />
-              01234567890 [] {} () &lt;&gt; : ; , .<br />
-              l1Ii g& -&gt; =&gt; == !== ?? "" '' ~
+              0123456789 [] {} () &lt;&gt; + - = ~ * : ; , .<br />
+              l1Ii 0O g&amp; -&gt; =&gt; := :: ?: == !== fi fl
             </div>
           </div>
 
           <!-- Bold -->
           <div class="style-row bold">
-            <div class="style-meta">Bold (700)</div>
+            <div class="style-meta">Neni Bold (700)</div>
             <div class="style-render">
               ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
               abcdefghijklmnopqrstuvwxyz<br />
-              01234567890 [] {} () &lt;&gt; : ; , .<br />
-              l1Ii g& -&gt; =&gt; == !== ?? "" '' ~
+              0123456789 [] {} () &lt;&gt; + - = ~ * : ; , .<br />
+              l1Ii 0O g&amp; -&gt; =&gt; := :: ?: == !== fi fl
             </div>
           </div>
 
           <!-- Bold Italic -->
           <div class="style-row bold italic">
-            <div class="style-meta">Bold Italic</div>
+            <div class="style-meta">Neni Bold Italic (700)</div>
             <div class="style-render">
               ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
               abcdefghijklmnopqrstuvwxyz<br />
-              01234567890 [] {} () &lt;&gt; : ; , .<br />
-              l1Ii g& -&gt; =&gt; == !== ?? "" '' ~
+              0123456789 [] {} () &lt;&gt; + - = ~ * : ; , .<br />
+              l1Ii 0O g&amp; -&gt; =&gt; := :: ?: == !== fi fl
             </div>
           </div>
         </div>
@@ -559,7 +562,7 @@ export class NeniMonoDemo {
       <!-- NERD FONTS ICON SPECIMEN -->
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">💎 Nerd Fonts Icon Edition (`NeniMono NF`)</h2>
+          <h2 class="card-title">💎 Nerd Fonts Icon Edition (`Neni NF`)</h2>
         </div>
         <div class="nf-showcase">
           <div class="nf-item"><span class="nf-icon"></span><span class="nf-desc">Visual Studio</span></div>
@@ -575,9 +578,9 @@ export class NeniMonoDemo {
     </div>
 
     <footer>
-      Neni Mono Font Family is licensed under the
-      <a href="LICENSE.md">SIL Open Font License 1.1</a>.<br />
-      Derived from Hack Typeface, alt-hack, and Bitstream Vera. Internal metadata renamed with <a href="https://github.com/chrissimpkins/fontname.py" target="_blank" rel="noopener">fontname.py</a>.
+      Neni Font Family is licensed under the
+      <a href="LICENSE.md">Apache License 2.0 &amp; Bitstream Vera License</a>.<br />
+      Derived from Meslo LG, Bitstream Vera Sans Mono, and Nerd Fonts.
     </footer>
 
     <script>
