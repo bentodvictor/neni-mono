@@ -42,15 +42,17 @@ The repository provides pre-built font binaries organized under the [`fonts/`](.
    - Gives lines of code comfortable vertical breathing room out-of-the-box without requiring manual `lineHeight` overrides in every editor.
 
 2. **Unified Mathematical & Operator Axis (`Y = 642`)**
-   - All core operators and punctuation used in compound expressions (`+`, `-`, `=`, `<`, `>`, `~`, `*`, `:`, `×`, `÷`, `±`) and strikethrough (`yStrikeoutPosition = 642`) are vertically centered on the exact same optical axis (`Y = 642.0`) across all 4 weights.
-   - Compound sequences like `->`, `=>`, `:=`, `::`, `?:`, `~=`, `*=` and `!==` align on a single horizontal plane.
+   - All core operators and punctuation used in compound expressions (`+`, `-`, `=`, `<`, `>`, `~`, `*`, `:`, `×`, `÷`, `±`, `≤`, `≥`, `≈`, `←`, `→`, `↔`, `⇐`, `⇒`, `⇔`, `–`, `—`, `·`) and strikethrough (`yStrikeoutPosition = 642`) are vertically centered on the exact same optical axis (`Y = 642.0`) across all 4 weights.
+   - Compound sequences like `->`, `=>`, `:=`, `::`, `?:`, `~=`, `*=` and `!==` align on a single horizontal plane, and Italic `=` / `≐ ≑ ≒ ≓` use clean non-overlapping contours.
 
 3. **Zero Vertical Shift & Mirrored Symmetry on Delimiters (`()`, `[]`, `{}`)**
    - Enclosing brackets `()`, `[]`, `{}` are vertically locked to `Y = 642.0` across `Regular`, `Bold`, `Italic`, and `Bold Italic` (fixing the 100-unit vertical jump between upright and bold/italic weights when syntax highlighters or rainbow-bracket plugins bold active brackets).
-   - Left and right outer margins are mirrored around the horizontal cell center (`X = 616.5`) so opening and closing delimiters sit at identical distances from enclosed text.
+   - Left and right outer margins are mirrored around the horizontal cell center (`X = 616.5`) across all 4 styles (including `Italic` and `Bold Italic`) so opening and closing delimiters sit at identical distances from enclosed text.
 
-4. **Horizontal Optical Centering (`X = 616.5`)**
-   - Symmetric symbols (`+`, `-`, `=`, `<`, `>`, `~`, `*`, `|`, `!`, `:`, `.`) are horizontally centered inside the `1233`-unit monospace cell.
+4. **Horizontal Optical Centering (`X = 616.5`) & Punctuation Alignment (`.`, `,`, `:`, `;`)**
+   - Code symbols (`+`, `-`, `=`, `<`, `>`, `~`, `*`, `/`, `\`, `|`, `!`, `:`, `.`, `'`, `"`, `` ` ``, `$`, `@`, `#`, `·`) are horizontally centered inside the `1233`-unit monospace cell (following the `-11°` slant axis on Italic/Bold Italic for `.`, `,`, `:`, `;`).
+   - `,` and `;` heads align on the exact horizontal axis of `.` and `:`, and the upper dot of `;` matches the exact vertical height and horizontal alignment of `:` across all 4 styles.
+   - `_` spans full-bleed (`0..1233`) seamlessly across all 4 weights, `|` locks to `Y = -483..1565` with zero weight jump, and `hmtx` left sidebearings match `glyf.xMin` with zero mismatches across all glyphs.
 
 5. **Zero Ligatures (Strict 1:1 Character Grid)**
    - All OpenType ligature tables (`GSUB`, `GPOS`, `GDEF`) and precomposed ligature glyphs (`fi`, `fl`, `ff`, `ffi`, `ffl`, `U+FB00..U+FB06`) are completely stripped. Every character you type renders strictly in its own cell.
